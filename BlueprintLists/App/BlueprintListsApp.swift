@@ -8,13 +8,16 @@
 import SwiftUI
 import SwiftData
 
+typealias ToDoList = DataSchemaV1.ToDoList
+
 @main
 struct BlueprintListsApp: App {
-
+    let modelContainer = ModelController.sharedInstance.modelContainer
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(modelContainer)
     }
 }
